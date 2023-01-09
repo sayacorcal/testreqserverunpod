@@ -11,4 +11,5 @@ COPY [".gitignore","index.js","package.json", "package-lock.json", "/usr/src/app
 RUN npm install
 
 EXPOSE 3000
+
 CMD [ "node", "index.js" ]
