@@ -8,4 +8,5 @@ to run it you must follow the next steps:
 
 # reinicio
 docker rm server1
+docker images
 docker image rm 74be41dc5a9c
