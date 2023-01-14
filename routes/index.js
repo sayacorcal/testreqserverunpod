@@ -1,14 +1,3 @@
-const { exec } = require('child_process');
-exec('ls ', (err, stdout, stderr) => {
-  if (err) {
-    // node couldn't execute the command
-    return;
-  }
-
-  // the *entire* stdout and stderr (buffered)
-  console.log(`stdout: ${stdout}`);
-  console.log(`stderr: ${stderr}`);
-});
 
 const trainorders = require("../api/trainorders/routes.js");
 const generateorders = require("../api/generateorders/routes.js");
