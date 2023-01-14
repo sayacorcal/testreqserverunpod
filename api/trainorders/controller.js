@@ -33,12 +33,13 @@ module.exports  = {
                 if(isList(jsonorders["orders"])){
                     lista = []
                     for(var i = 0; i < jsonorders["orders"].length; i++){
-                        console.log
+                        
                         if(jsonorders["orders"][i]["type"] == "train model"){
                             lista.push(jsonorders["orders"][i])
                         }
                     }
-                    return res.send({user: decoded.user, orders: lista });
+                    //return res.send({user: decoded.user, orders: lista });
+                    return res.send({ orders: lista });
                 }else{
                     return res.status(401).send({ error: 'Internal Error, get orders error' });
                 }

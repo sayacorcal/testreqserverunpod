@@ -36,7 +36,8 @@ module.exports  = {
                             lista.push(jsonorders["orders"][i])
                         }
                     }
-                    return res.send({user: decoded.user, orders: lista });
+                    //return res.send({user: decoded.user, orders: lista });
+                    return res.send({ orders: lista });
                 }else{
                     return res.status(401).send({ error: 'Internal Error, get orders error' });
                 }
