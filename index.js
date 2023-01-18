@@ -1,3 +1,19 @@
+
+// verificar si se esta ejecutando desde google colab
+const fs = require('fs');
+if (fs.existsSync("/content")) {
+    console.log("Running on Google Colab");
+    const ngrok = require('ngrok');
+    (async function() {
+    const url = await ngrok.connect(3000);
+    console.log(url);
+    })();
+
+} else {
+    console.log("Running on a server or local machine");
+}
+
+
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
