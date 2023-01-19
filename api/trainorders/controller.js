@@ -22,6 +22,8 @@ module.exports  = {
                 if (err) {
                     console.log(err)
                     return res.status(401).send({ error: 'Invalid token' });
+                }else{
+                    console.log("no hubo error de jwt y secret key")
                 }    
                 // If the token is valid, send a response with the user's data
                 // get the existense orders 
@@ -29,7 +31,13 @@ module.exports  = {
                     // If the token is valid, send a response with the user's data
                     // get the existense orders 
                     fs.readFile('orders.json', (err, data) => {
-                        if (err) throw err;
+                        if (err){
+                            console.log(err);
+                            return res.status(401).send({ error: 'Internal Error, fs error' });
+                        }else{
+                            console.log("no hubo error de fs")
+                        }
+
                         // Parse the JSON file to an object
                         let jsonorders = JSON.parse(data);
                         console.log(jsonorders)
@@ -48,12 +56,12 @@ module.exports  = {
                     });
                 } catch (e) {
                     console.log(e);
-                    return res.status(401).send({ error: 'Internal Error, get orders error' });
+                    return res.status(401).send({ error: 'Internal Error, fs error' });
                 }
             });
         } catch (e) {
             console.log(e);
-            return res.status(401).send({ error: 'Invalid token' });
+            return res.status(401).send({ error: 'Invalid token, jwt error' });
         }
     }
 }
