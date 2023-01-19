@@ -18,10 +18,10 @@ module.exports  = {
         }
         console.log("token get it on reques: ",token , " \n",token.split(" "))
         try {
-            var decoded = jwt.verify(token.split(" ")[1], secretKey);
+            // comentando la autenticacion
+            //var decoded = jwt.verify(token.split(" ")[1], secretKey);
             console.log(decoded.foo)
             try {
-                // If the token is valid, send a response with the user's data
                 // get the existense orders 
                 fs.readFile('orders.json', (err, data) => {
                     if (err){
