@@ -5,6 +5,7 @@ if (fs.existsSync("/content")) {
     console.log("Running on Google Colab");
     const ngrok = require('ngrok');
     (async function() {
+        const token = "2KUCr7NT2p3G8fR5ob97BGH7yNJ_CGQYF8sxvk3NxJDKmPzH"
         await ngrok.authtoken(token);
         const url = await ngrok.connect(3000);
         console.log(url);
