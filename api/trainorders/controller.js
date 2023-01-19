@@ -18,7 +18,7 @@ module.exports  = {
         }
         console.log("token get it on reques: ",token , " \n",token.split(" "))
         try {  
-            jwt.verify(token.split(" ")[1], secretKey, async (err, decoded) =>{
+            jwt.verify(token, secretKey, async (err, decoded) =>{
                 if (err) {
                     console.log(err)
                     return res.status(401).send({ error: 'Invalid token' });
