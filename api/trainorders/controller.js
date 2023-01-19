@@ -16,7 +16,7 @@ module.exports  = {
         if (!token) {
             return res.status(401).send({ error: 'No token provided' });
         }
-        console.log("token get it on reques: ",token)
+        console.log("token get it on reques: ",token , " \n",token.split(" "))
         // Verify the token and decode the payload
         jwt.verify(token.split(" ")[1], secretKey, async (err, decoded) => {
             if (err) {
