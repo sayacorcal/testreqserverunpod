@@ -5,7 +5,7 @@
         "status": "pending",
         "type": "train model",
         "style": "pixar",
-        "avatar-name": "sayacorcal",
+        "avatar_name": "sayacorcal",
         "images": "sayacorcal-link-images"
     },
     {
@@ -14,7 +14,7 @@
         "status": "pending",
         "type": "image generation",
         "style": "pixar",
-        "avatar-name": "sayacorcal",
+        "avatar_name": "sayacorcal",
         "model": "saidjoc-link-model"
     }
 ]}
