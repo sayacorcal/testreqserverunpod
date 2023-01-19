@@ -18,15 +18,9 @@ module.exports  = {
         }
         console.log("token get it on reques: ",token , " \n",token.split(" "))
         //try {  
-        jwt.verify(token.split(" ")[1], secretKey, async (err, decoded) =>{
-            if (err) {
-                console.log(err)
-                return res.status(401).send({ error: 'Invalid token' });
-            }else{
-                console.log("no hubo error de jwt y secret key")
-            }    
-            // If the token is valid, send a response with the user's data
-            // get the existense orders 
+        try {
+            var decoded = jwt.verify(token.split(" ")[1], secretKey);
+            console.log(decoded.foo)
             try {
                 // If the token is valid, send a response with the user's data
                 // get the existense orders 
@@ -58,6 +52,20 @@ module.exports  = {
                 console.log(e);
                 return res.status(401).send({ error: 'Internal Error, fs error' });
             }
+        } catch(err) {
+            // err
+        }
+              
+        jwt.verify(token.split(" ")[1], secretKey, async (err, decoded) =>{
+            if (err) {
+                console.log(err)
+                return res.status(401).send({ error: 'Invalid token' });
+            }else{
+                console.log("no hubo error de jwt y secret key")
+            }    
+            // If the token is valid, send a response with the user's data
+            // get the existense orders 
+            
         });
         //} catch (e) {
         //    console.log(e);
