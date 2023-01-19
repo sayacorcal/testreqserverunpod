@@ -29,6 +29,7 @@ module.exports  = {
                 if (err) throw err;
                 // Parse the JSON file to an object
                 let jsonorders = JSON.parse(data);
+                console.log(jsonorders)
                 // get the orders that are type "train model"
                 if(isList(jsonorders["orders"])){
                     lista = []
