@@ -4,6 +4,12 @@ const fs = require('fs');
 
 module.exports  = {
     postendtrainorder(req, res){
+        const token = req.headers['authorization'];
+        // If there is no token, return a 401 unauthorized error
+        if (!token) {
+            return res.status(401).send({ error: 'No token provided' });
+        }
+        
         const orders = require('./orders.json').orders;
         const id = req.params.id;
         const newStatus = req.body.status;
