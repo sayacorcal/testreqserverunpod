@@ -20,7 +20,7 @@ module.exports  = {
         try {
             // comentando la autenticacion
             //var decoded = jwt.verify(token.split(" ")[1], secretKey);
-            console.log(decoded.foo)
+            //console.log(decoded.foo)
             try {
                 // get the existense orders 
                 fs.readFile('orders.json', (err, data) => {
