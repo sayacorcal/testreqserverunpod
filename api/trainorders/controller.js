@@ -5,7 +5,7 @@ const fs = require('fs');
 const secretKey = 'paranguacutirimicuaro';
 
 function isList(obj) {
-    return obj instanceof Array;
+    return Array.isArray(obj);
 }
 
 module.exports  = {
