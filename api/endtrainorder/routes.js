@@ -3,7 +3,7 @@ const controller = require('./controller');
 
 const router = express.Router();
 
-router.post( '/:id', controller.postendtrainorder );
+router.post( '/', controller.postendtrainorder );
 
 module.exports = router;
 
