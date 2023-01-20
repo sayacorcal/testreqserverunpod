@@ -9,7 +9,9 @@ module.exports  = {
         if (!token) {
             return res.status(401).send({ error: 'No token provided' });
         }
-        
+        console.log(__dirname);
+        console.log(process.cwd());
+
         const orders = require('./orders.json').orders;
         const id = req.params.id;
         const newStatus = req.body.status;
