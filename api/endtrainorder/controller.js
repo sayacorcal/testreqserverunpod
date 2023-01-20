@@ -13,10 +13,11 @@ module.exports  = {
         console.log(process.cwd());
 
         const orders = require('../../orders.json').orders;
-        const id = req.params.id;
+        const id = req.body.id;
         const newStatus = req.body.status;
         console.log(id," ",newStatus)
         for (let i = 0; i < orders.length; i++) {
+            
             if (orders[i].id === id) {
                 orders[i].status = newStatus;
                 res.status(200).json({ message: 'Order status updated successfully' });
