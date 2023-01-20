@@ -12,7 +12,7 @@ module.exports  = {
         console.log(__dirname);
         console.log(process.cwd());
 
-        const orders = require('orders.json').orders;
+        const orders = require('../orders.json').orders;
         const id = req.params.id;
         const newStatus = req.body.status;
         console.log(id," ",newStatus)
