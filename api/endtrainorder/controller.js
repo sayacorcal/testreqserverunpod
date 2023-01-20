@@ -20,7 +20,7 @@ module.exports  = {
         for (let i = 0; i < orders.length; i++) {
             if (orders[i].id === id) {
                 orders[i].status = newStatus;
-                fs.writeFileSync('../../orders.json', JSON.stringify(orders));
+                fs.writeFileSync('orders.json', JSON.stringify(orders));
                 res.status(200).json({ message: 'Order status updated successfully' });
                 return;
             }
